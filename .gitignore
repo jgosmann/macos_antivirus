@@ -1,0 +1,4 @@
+/.venv
+/.vscode
+/tests/output
+/*.tar.gz

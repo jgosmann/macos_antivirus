@@ -1,0 +1,27 @@
+---
+
+- name: Provide freshclam configuration
+  ansible.builtin.template:
+    src: freshclam.conf.j2
+    dest: "{{ freshclam_config_path }}"
+    owner: root
+    group: wheel
+    mode: 0644
+      
+- name: Touch freshclam logfile
+  ansible.builtin.file:
+    path: "{{ freshclam_update_log_file }}"
+    state: touch
+    owner: "{{ clamd_user }}"
+    group: "{{ clamd_group }}"
+    mode: 0644
+    modification_time: preserve
+    access_time: preserve
+      
+- name: Provide freshclam daemon
+  ansible.builtin.template:
+    src: local.freshclam.plist.j2
+    dest: /Library/LaunchDaemons/local.freshclam.plist
+    owner: root
+    group: wheel
+    mode: 0644

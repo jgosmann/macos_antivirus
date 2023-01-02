@@ -1,0 +1,9 @@
+---
+
+- name: Provide avscan.py script
+  ansible.builtin.copy:
+    src: avscan.py
+    dest: "{{ avscan_path }}"
+    owner: root
+    group: wheel
+    mode: 0755

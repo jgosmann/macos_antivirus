@@ -1,0 +1,11 @@
+---
+
+prefix: /opt/local
+python3_path: "{{ prefix }}/bin/python3"
+fswatch_path: "{{ prefix }}/bin/fswatch"
+
+install_bin_directory: /usr/local/bin
+avscan_path: "{{ install_bin_directory }}/avscan.py"
+  
+avwatch_path: "{{ install_bin_directory }}/avwatch.sh"
+avwatch_config_path: ~/.config/avwatch

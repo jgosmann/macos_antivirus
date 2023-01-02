@@ -1,0 +1,17 @@
+---
+
+- name: Provide clamd configuration
+  ansible.builtin.template:
+    src: clamd.conf.j2
+    dest: "{{ clamd_config_path }}"
+    owner: root
+    group: wheel
+    mode: 0644
+
+- name: Provide clamd daemon
+  ansible.builtin.template:
+    src: local.clamd.plist.j2
+    dest: /Library/LaunchDaemons/local.clamd.plist
+    owner: root
+    group: wheel
+    mode: 0644

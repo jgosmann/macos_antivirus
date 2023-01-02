@@ -1,0 +1,4 @@
+---
+
+install_bin_directory: /usr/local/bin
+avscan_path: "{{ install_bin_directory }}/avscan.py"

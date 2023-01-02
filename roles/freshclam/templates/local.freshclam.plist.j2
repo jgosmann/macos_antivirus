@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+{{ ansible_managed | comment('xml') }}
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>local.freshclam</string>
+        <key>Program</key>
+        <string>{{ freshclam_path }}</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>{{ freshclam_path }}</string>
+            <string>--config-file={{ freshclam_config_path }}</string>
+            <string>--foreground</string>
+        </array>
+        <key>RunAtLoad</key> <true/>
+        <key>StartInterval</key> <integer>86400</integer>
+        <key>Nice</key> <integer>10</integer>
+        <key>LowPriorityIO</key> <true/>
+        <key>LowPriorityBackgroundIO</key> <true/>
+    </dict>
+</plist>

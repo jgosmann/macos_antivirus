@@ -1,0 +1,13 @@
+---
+
+clamd_user: _clamav
+clamd_group: _clamav
+ 
+prefix: /opt/local
+
+clamd_path: "{{ prefix }}/sbin/clamd"
+clamd_config_path: "{{ prefix }}/etc/clamd.conf"
+
+clamd_log_file: /tmp/clamd.log
+clamd_local_socket: /tmp/clamd.socket
+clamd_additional_config: ''

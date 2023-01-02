@@ -1,0 +1,17 @@
+---
+
+- name: Provide avwatch.sh script
+  ansible.builtin.template:
+    src: avwatch.sh.j2
+    dest: "{{ avwatch_path }}"
+    owner: root
+    group: wheel
+    mode: 0755
+
+- name: Provide avwatch daemon
+  ansible.builtin.template:
+    src: local.avwatch.plist.j2
+    dest: /Library/LaunchAgents/local.avwatch.plist
+    owner: root
+    group: wheel
+    mode: 0644

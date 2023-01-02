@@ -1,0 +1,17 @@
+---
+
+- name: Provide avfullscan.py script
+  ansible.builtin.copy:
+    src: avfullscan.py
+    dest: "{{ avfullscan_path }}"
+    owner: root
+    group: wheel
+    mode: 0755
+
+- name: Provide avfullscan agent
+  ansible.builtin.template:
+    src: local.avfullscan.plist.j2
+    dest: /Library/LaunchAgents/local.avfullscan.plist
+    owner: root
+    group: wheel
+    mode: 0644

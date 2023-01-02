@@ -1,0 +1,3 @@
+roles/avfullscan/files/avfullscan.py shebang!skip
+roles/avscan/files/avscan.py shebang!skip
+roles/avwatch/templates/avwatch.sh.j2 shebang!skip

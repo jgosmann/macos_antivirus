@@ -1,0 +1,12 @@
+---
+
+clamd_user: _clamav
+clamd_group: _clamav
+  
+prefix: /opt/local
+
+freshclam_path: "{{ prefix }}/bin/freshclam"
+freshclam_config_path: "{{ prefix }}/etc/freshclam.conf"
+
+freshclam_update_log_file: /var/log/freshclam.log
+freshclam_additional_config: ''
