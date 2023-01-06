@@ -25,7 +25,7 @@ jobs:
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip
-            
+
       - name: Install requirements
         run: pip install -r requirements.txt
         working-directory: ansible_collections/jgosmann/macos_antivirus
@@ -33,7 +33,7 @@ jobs:
       - name: Run sanity checks
         run: ansible-test sanity -v
         working-directory: ansible_collections/jgosmann/macos_antivirus
-          
+
   release:
     runs-on: ubuntu-latest
     needs: [sanity]
@@ -49,10 +49,10 @@ jobs:
       - name: Get version from tag
         id: version
         run: echo "version=${GITHUB_REF#refs/*/v}" >> $GITHUB_OUTPUT
-          
+
       - name: Update version in galaxy.yml
         run: 'sed -i "s/^version: .*\$/version: ${{ steps.version.outputs.version }}/g" galaxy.yml'
-          
+
       - name: Check version has been up-to-date
         run: test -z "$(git status -s)"
 
@@ -66,7 +66,7 @@ jobs:
 
       - name: Build release
         run: ansible-galaxy collection build
-          
+
       - name: Set API tokin in configuration
         run: sed -i "s/\$ANSIBLE_GALAXY_TOKEN/${{ secrets.ANSIBLE_GALAXY_TOKEN }}/g" ".github/workflows/release-ansible.cfg"
 

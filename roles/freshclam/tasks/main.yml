@@ -7,7 +7,7 @@
     owner: root
     group: wheel
     mode: 0644
-      
+
 - name: Touch freshclam logfile
   ansible.builtin.file:
     path: "{{ freshclam_update_log_file }}"
@@ -17,7 +17,7 @@
     mode: 0644
     modification_time: preserve
     access_time: preserve
-      
+
 - name: Provide freshclam daemon
   ansible.builtin.template:
     src: local.freshclam.plist.j2

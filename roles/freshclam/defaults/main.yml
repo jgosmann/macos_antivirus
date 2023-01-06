@@ -2,7 +2,7 @@
 
 clamd_user: _clamav
 clamd_group: _clamav
-  
+
 prefix: /opt/local
 
 freshclam_path: "{{ prefix }}/bin/freshclam"

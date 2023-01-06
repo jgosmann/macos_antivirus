@@ -2,7 +2,7 @@
 
 clamd_user: _clamav
 clamd_group: _clamav
- 
+
 prefix: /opt/local
 
 clamd_path: "{{ prefix }}/sbin/clamd"

@@ -7,7 +7,7 @@ install_bin_directory: /usr/local/bin
 
 avfullscan_path: "{{ install_bin_directory }}/avfullscan.py"
 avfullscan_timestamp_file_path: ~/.avfullscan.timestamp
-  
+
 avfullscan_dirs: ["~"]
 avfullscan_interval_secs: 86400
 avfullscan_check_interval_secs: 3600
